@@ -1,0 +1,24 @@
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+  }
+  
+  .timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  span {
+    font-weight: bold;
+  }
+  
+  

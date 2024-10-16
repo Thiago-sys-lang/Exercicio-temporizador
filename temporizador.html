@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temporizador de Contagem Regressiva</title>
+  <link rel="stylesheet" href="temporizador.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contagem Regressiva</h1>
+    <input type="datetime-local" id="dataFutura">
+    <button onclick="iniciarContagem()">Iniciar</button>
+    <div class="timer">
+      <div class="time-unit">
+        <span id="dias">00</span>
+        <span>dias</span>
+      </div>
+      </div>
+  </div>
+  <script>
+    const dataFuturaInput = document.getElementById('dataFutura');
+    const diasElement = document.getElementById('dias');
+    // ... outros elementos para horas, minutos e segundos ...
+
+    function iniciarContagem() {
+      const dataFuturaString = dataFuturaInput.value;
+      const dataFutura = new Date(dataFuturaString);
+
+      if (isNaN(dataFutura)) {
+        alert('Data inválida. Por favor, insira uma data válida.');
+        return;
+      }
+
+      // Função para formatar números
+      function formatarNumero(numero) {
+        return numero.toString().padStart(2, '0');
+      }
+
+      // Função para atualizar o temporizador
+      function atualizarTemporizador() {
+        // ... (mesmo código para calcular o tempo restante)
+        diasElement.textContent = formatarNumero(dias);
+        // ... outros elementos para horas, minutos e segundos ...
+      }
+
+      // Iniciar a contagem regressiva
+      atualizarTemporizador();
+      setInterval(atualizarTemporizador, 1000);
+    }
+  </script>
+</body>
+</html>
